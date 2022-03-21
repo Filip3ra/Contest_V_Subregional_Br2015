@@ -7,9 +7,10 @@ int main(int argc, char const *argv[]){
     int A, B;
 
     while(cin >> A >> B){
-        
-        cout << A << " " << B << endl;
+        if(A>B)
+            cout << A << endl; // se o maior for o A
+        else
+            cout << B << endl; // se não for o A então é o B
     }
-
     return 0;
 }
