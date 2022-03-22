@@ -27,14 +27,15 @@ int main(int argc, char const *argv[]){
 
             p = ((int)str[i] - 48); // em ascii, os dígitos começam em 48
 
-            if(cont<J){     // ALGUM BUG COM OS NUMEROS ESTA OCORRENDO AQUI
+            if(cont<J){
                 jogadores[cont] += p;
-                cout << "jog = " << cont+1 << " pts = " << jogadores[cont] << endl;
                 cont++;
-                cout << "cont = " << cont << endl;
             }
-            else    // se entrei no else, uma rodada acabou
+            else{
                 cont = 0;
+                jogadores[cont] += p;
+                cont++;
+            }                
         }
 
         int maior = 0 ;
@@ -47,7 +48,20 @@ int main(int argc, char const *argv[]){
             }
         }
 
-        cout << vencedor << endl;
+        cout << "vencedor = " << vencedor+1 << endl;
+
+        // limpa variáveis usadas
+        maior = 0;
+        vencedor = 0;
+        str.clear();
+
+        // zera vetor de pontos até onde foi usado
+        for(int i = 0; i < J ; ++i){
+            cout << i+1 << " - " << jogadores[i] << endl;
+            jogadores[i] = 0;
+        }
+
+
 
     }
 
