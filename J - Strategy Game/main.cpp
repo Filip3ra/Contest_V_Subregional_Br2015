@@ -1,5 +1,7 @@
+
 #include <iostream>
 #include <string>
+#include<algorithm>
 
 using namespace std;
 
@@ -11,7 +13,11 @@ int main(int argc, char const *argv[]){
 
     while(cin >> J >> R){   // jogadores e rounds
 
+        cin.ignore();   // ignora \n
         getline(cin, str);  // lista de pontos
+        remove(str.begin(), str.end(), ' '); // remove espaços de uma string
+
+        //cout << str;
 
         int fim = (J*R);    
         int cont = 0;       // contador pra cada rodada
@@ -19,23 +25,17 @@ int main(int argc, char const *argv[]){
 
         for(int i = 0; i < fim; ++i){
 
-            if(str[i] != ' '){
+            p = ((int)str[i] - 48); // em ascii, os dígitos começam em 48
 
-                p = (int)str[i]; // <-- BUG, PARECE QUE TA LENDO O VALOR INT CHAR DO CARACTERE 
-
-                cout << p << endl;
-
-                if(cont<J){
-                    jogadores[cont] += p;
-                    
-                    cont++;
-                }
-                else{ // se entrei no else, uma rodada acabou
-                    cont = 0;
-                }
+            if(cont<J){     // ALGUM BUG COM OS NUMEROS ESTA OCORRENDO AQUI
+                jogadores[cont] += p;
+                cout << "jog = " << cont+1 << " pts = " << jogadores[cont] << endl;
+                cont++;
+                cout << "cont = " << cont << endl;
             }
+            else    // se entrei no else, uma rodada acabou
+                cont = 0;
         }
-        str.clear();
 
         int maior = 0 ;
         int vencedor = 0;

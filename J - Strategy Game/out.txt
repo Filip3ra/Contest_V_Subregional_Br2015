@@ -1,16 +1,24 @@
+jog = 1 pts = 1
+cont = 1
+jog = 2 pts = 1
+cont = 2
+jog = 3 pts = 1
+cont = 3
+jog = 1 pts = 3
+cont = 1
+jog = 2 pts = 3
+cont = 2
+jog = 3 pts = 3
+cont = 3
+jog = 1 pts = 6
+cont = 1
 0
--9
-97
-0
-117
--11
-118
-100
-2
-0
-0
-49
-49
-50
-0
+jog = 1 pts = 6
+cont = 1
+jog = 2 pts = 3
+cont = 2
+jog = 1 pts = 6
+cont = 1
+jog = 2 pts = 5
+cont = 2
 0
